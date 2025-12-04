@@ -11,22 +11,22 @@ insert into silver.crm_cust_info (
 
 
 select 
-cst_id,
-cst_key,
-trim(cst_firstname) as cst_firstname,
-trim(cst_lastname) as cst_lastname,
-
-case when UPPER(Trim(cst_material_status)) = 'S' then 'Single' 
-	 when UPPER(Trim(cst_material_status)) = 'M' then 'Married' 
-	 else 'N/a'
-end cst_material_status,
-
-case when UPPER(Trim(cst_gndr)) = 'F' then 'Female' 
-	 when UPPER(Trim(cst_gndr)) = 'M' then 'Male' 
-	 else 'N/a'
-end cst_gndr,
-cst_create_date
-
+	cst_id,
+	cst_key,
+	trim(cst_firstname) as cst_firstname,
+	trim(cst_lastname) as cst_lastname,
+	
+	case when UPPER(Trim(cst_material_status)) = 'S' then 'Single' 
+		 when UPPER(Trim(cst_material_status)) = 'M' then 'Married' 
+		 else 'N/a'
+	end cst_material_status,
+	
+	case when UPPER(Trim(cst_gndr)) = 'F' then 'Female' 
+		 when UPPER(Trim(cst_gndr)) = 'M' then 'Male' 
+		 else 'N/a'
+	end cst_gndr,
+	cst_create_date
+	
 
 from
 (select *, 
